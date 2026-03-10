@@ -91,7 +91,7 @@ export default function AboutSection({ settings }: { settings: any }) {
               controls
               preload="metadata"
               className="w-full h-auto"
-              poster="/about/intro-poster.jpg"
+              poster="/about/office-building.jpg"
             >
               <source src="/about/intro.mp4" type="video/mp4" />
               Your browser does not support the video tag.
