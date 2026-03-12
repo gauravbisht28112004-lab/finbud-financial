@@ -2,14 +2,27 @@ import Footer from '@/components/sections/Footer';
 import { connectDB } from '@/lib/db';
 import Settings from '@/models/Settings';
 
+const defaultSettings = {
+  about: {},
+  contact: {},
+  social: {},
+  hero: {},
+  reviews: [],
+  partners: [],
+  family: [],
+  team: [],
+  achievements: [],
+  banks: [],
+  footer: {},
+};
+
 async function getSettings() {
   try {
     await connectDB();
-    let s = await Settings.findOne().lean();
-    if (!s) s = {};
-    return s;
+    const s = await Settings.findOne().lean();
+    return s ?? defaultSettings;
   } catch {
-    return {};
+    return defaultSettings;
   }
 }
 
@@ -18,11 +31,10 @@ export default async function SiteLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const settings = (await getSettings()) as any;
+  const settings = await getSettings();
 
   return (
     <>
-      {/* ✅ Navbar removed from layout */}
       <main>{children}</main>
       <Footer settings={settings} />
     </>
