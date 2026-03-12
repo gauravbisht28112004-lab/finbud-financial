@@ -98,7 +98,7 @@ export default async function HomePage() {
       </ScrollReveal>
 
       <ScrollReveal>
-        <ContactSection settings={s} />
+        <ContactSection />
       </ScrollReveal>
 
     </>
