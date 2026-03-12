@@ -2,34 +2,41 @@
 
 import Image from "next/image";
 
-const achievements = [
+type Achievement = {
+  title: string;
+  description: string;
+  image: string;
+  position?: string;
+};
+
+const achievements: Achievement[] = [
   {
     title: "Best Financial Startup",
     description:
       "Recognized for outstanding growth and innovation in financial advisory services.",
     image: "/achievement/award1.jpg",
-    position: "center",
+    position: "object-center",
   },
   {
     title: "Employee Excellence",
-description:
-  "Recognizing the dedication, talent, and achievements of our team members who drive FinBud's success.",
+    description:
+      "Recognizing the dedication, talent, and achievements of our team members who drive FinBud's success.",
     image: "/achievement/clients.jpg",
-    position: "top",
+    position: "object-top",
   },
   {
     title: "Team Excellence Award",
     description:
       "Awarded for exceptional teamwork, dedication, and service quality.",
     image: "/achievement/team-award.jpg",
-    position: "center",
+    position: "object-center",
   },
   {
     title: "Industry Recognition",
     description:
       "FinBud continues to gain trust and recognition in the financial services industry.",
     image: "/achievement/recognition.jpg",
-    position: "center",
+    position: "object-center",
   },
 ];
 
@@ -57,9 +64,7 @@ export default function AchievementSection() {
                   src={item.image}
                   alt={item.title}
                   fill
-                  className={`object-cover ${
-                    item.position === "top" ? "object-top" : "object-center"
-                  }`}
+                  className={`object-cover ${item.position ?? "object-center"}`}
                 />
               </div>
 
