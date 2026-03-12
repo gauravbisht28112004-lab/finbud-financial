@@ -8,7 +8,7 @@ const PHONE_NUMBER = '+91 9540303660';
 const EMAIL_ADDRESS = 'anjali.bisth@financebuddha.com';
 
 const INSTAGRAM_URL = 'https://www.instagram.com/finbud_financial';
-const FACEBOOK_URL = 'https://www.facebook.com/finbudfinancial'; // 🔁 change if needed
+const FACEBOOK_URL = 'https://www.facebook.com/people/Akash-Vibes/pfbid02LnseqpPQQ1e1rS2ztp5vDVLaQZUtMxxec9sxcQvSWeY48kLej7eCwq13PW852g2hl/?mibextid=wwXIfr&rdid=l5pSxZxpcBYezV7i&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1boLYSEp6U%2F%3Fmibextid%3DwwXIfr%26ref%3D1'; // 🔁 change if needed
 
 // WhatsApp number (no +, no spaces)
 const WHATSAPP_NUMBER = '919540303660';

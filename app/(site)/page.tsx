@@ -7,10 +7,11 @@ import ReviewsSection from '@/components/sections/ReviewsSection';
 import TeamSection from '@/components/sections/TeamSection';
 import ContactSection from '@/components/sections/ContactSection';
 import ScrollReveal from '@/components/ui/ScrollReveal';
-
+import AchievementSection from "@/components/sections/AchievementSection";
 import Image from 'next/image';
 
 export default async function HomePage() {
+
   // ✅ No DB: safe default content so nothing breaks
   const settings: any = {};
   const slides: any[] = [];
@@ -56,9 +57,11 @@ export default async function HomePage() {
         <TeamSection leaders={leaders} />
       </ScrollReveal>
 
+      {/* ⭐ FAMILY SECTION */}
       <ScrollReveal>
         <section id="family" className="py-24 bg-slate-900 text-white">
           <div className="mx-auto max-w-7xl px-4">
+
             <h2 className="text-4xl md:text-5xl font-extrabold text-center">
               FinBud Family
             </h2>
@@ -84,13 +87,20 @@ export default async function HomePage() {
                 </div>
               ))}
             </div>
+
           </div>
         </section>
+      </ScrollReveal>
+
+      {/* ⭐ ACHIEVEMENT SECTION */}
+      <ScrollReveal>
+        <AchievementSection />
       </ScrollReveal>
 
       <ScrollReveal>
         <ContactSection settings={s} />
       </ScrollReveal>
+
     </>
   );
 }
