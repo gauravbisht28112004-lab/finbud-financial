@@ -9,18 +9,21 @@ type Bank = {
 };
 
 const DEFAULT_BANKS: Bank[] = [
-  { name: 'SBI', logo: '/banks/sbi.png' },
+  { name: 'Incred finance', logo: '/banks/Incred.png' },
   { name: 'HDFC Bank', logo: '/banks/hdfc.png' },
   { name: 'ICICI Bank', logo: '/banks/icici.png' },
   { name: 'Axis Bank', logo: '/banks/axis.png' },
   { name: 'Kotak Bank', logo: '/banks/kotak.png' },
-  { name: 'PNB', logo: '/banks/pnb.png' },
-  { name: 'Bank of Baroda', logo: '/banks/bob.png' },
-  { name: 'Canara Bank', logo: '/banks/canara.png' },
+  { name: 'Fibe', logo: '/banks/fibe.png' },
+  { name: 'Finnable', logo: '/banks/finnable.png' },
+  { name: 'Poonawalla', logo: '/banks/poonawalla.png' },
   { name: 'IndusInd', logo: '/banks/indusind.png' },
   { name: 'Yes Bank', logo: '/banks/yes.png' },
   { name: 'Bajaj Finserv', logo: '/banks/bajaj.png' },
   { name: 'IDFC First', logo: '/banks/idfc.png' },
+  { name: 'Piramal', logo: '/banks/piramal.png' },
+  { name: 'Aditya Birla Group', logo: '/banks/abg.png' },
+  { name: 'Tata Capital', logo: '/banks/tata.png' },
 ];
 
 function BankCard({ bank }: { bank: Bank }) {
