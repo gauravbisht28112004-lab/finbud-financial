@@ -9,7 +9,7 @@ type Bank = {
 };
 
 const DEFAULT_BANKS: Bank[] = [
-  { name: 'Incred finance', logo: '/banks/Incred.png' },
+  { name: 'Incred Finance', logo: '/banks/Incred.png' },
   { name: 'HDFC Bank', logo: '/banks/hdfc.png' },
   { name: 'ICICI Bank', logo: '/banks/icici.png' },
   { name: 'Axis Bank', logo: '/banks/axis.png' },
@@ -35,7 +35,9 @@ function BankCard({ bank }: { bank: Bank }) {
                  flex items-center gap-4 justify-center bg-white"
       style={{
         border: `2px solid ${hovered ? '#1B4FD8' : '#E2E8F5'}`,
-        transform: hovered ? 'translateY(-4px) scale(1.03)' : 'translateY(0) scale(1)',
+        transform: hovered
+          ? 'translateY(-4px) scale(1.03)'
+          : 'translateY(0) scale(1)',
         boxShadow: hovered
           ? '0 16px 35px rgba(27,79,216,0.22)'
           : '0 6px 18px rgba(0,0,0,0.06)',
@@ -76,7 +78,7 @@ export default function BanksSection({ banks }: { banks?: any[] }) {
           DEFAULT_BANKS.find(
             (x) => x.name.toLowerCase() === String(b.name).toLowerCase()
           )?.logo ||
-          '/banks/sbi.png',
+          '/banks/hdfc.png',
       }));
     }
     return DEFAULT_BANKS;
@@ -90,9 +92,11 @@ export default function BanksSection({ banks }: { banks?: any[] }) {
         <span className="text-xs font-bold tracking-[2.5px] uppercase text-[#1B4FD8]">
           Our Network
         </span>
+
         <h2 className="font-display font-black text-4xl lg:text-5xl text-[#0A1628] leading-tight mt-2 mb-4">
-          We Collaborate With <br /> Leading Banks
+          We Collaborate With <br /> Leading Banks & NBFCs
         </h2>
+
         <p className="text-gray-500 max-w-xl mx-auto">
           Access the best loan offers across India’s top financial institutions
           through our trusted network.
