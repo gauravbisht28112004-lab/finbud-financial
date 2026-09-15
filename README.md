@@ -1,216 +1,83 @@
-# FinBud Financial Website
+# FinBud Financial
 
-> A Finance Buddha sub-brand initiative — Full Stack Next.js 14 website with Admin Dashboard.
+FinBud Financial is a modern, responsive financial services platform designed to help individuals and businesses find the right loans — personal, home, business, and overdraft facilities. 
 
----
+A proud initiative inspired by Finance Buddha's visual identity, this project connects borrowers with top lending partners across India through a streamlined, premium user interface.
 
-## 🗂 Project Structure
+## 🚀 Features
 
+- **Premium UI/UX**: Designed with a sleek, trustworthy financial aesthetic featuring custom color palettes, smooth animations, and optimized components.
+- **Smart Calculators**: Includes dynamic tools for users to plan their finances:
+  - EMI Calculator
+  - Loan Eligibility Calculator
+  - Overdraft Calculator
+- **Dynamic Partner Integrations**: Infinite scrolling marquee featuring India's top Banks and NBFCs.
+- **Form Handling**: Integrated contact and application forms backed by Supabase.
+- **Fully Responsive**: Built mobile-first to ensure a flawless experience across all devices.
+
+## 🛠️ Tech Stack
+
+- **Frontend Framework**: [React 18](https://react.dev/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Routing**: [React Router](https://reactrouter.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Backend/Database**: [Supabase](https://supabase.com/)
+
+## 📦 Installation & Setup
+
+1. **Clone the repository** (if you haven't already):
+   ```bash
+   git clone https://github.com/gauravbisht28112004-lab/finbud-financial.git
+   cd finbud-financial
+   ```
+
+2. **Install dependencies**:
+   Make sure you have Node.js installed, then run:
+   ```bash
+   npm install
+   ```
+
+3. **Environment Variables**:
+   Create a `.env` file in the root directory and add your Supabase credentials to enable form submissions:
+   ```env
+   VITE_SUPABASE_URL=your_supabase_url
+   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+   ```
+
+4. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
+   The application will be available at `http://localhost:5173`.
+
+## 🏗️ Building for Production
+
+To create a production-ready optimized build, run:
+```bash
+npm run build
 ```
+The output will be available in the `dist` directory, ready to be deployed to platforms like Vercel, Netlify, or AWS.
+
+## 📁 Project Structure
+
+```text
 finbud-financial/
-├── app/
-│   ├── (site)/                  ← Public website (grouped route)
-│   │   ├── layout.tsx           ← Navbar + Footer wrapper
-│   │   └── page.tsx             ← Homepage (fetches all DB data)
-│   ├── admin/
-│   │   ├── login/page.tsx       ← Admin login page
-│   │   └── dashboard/page.tsx   ← Full admin panel (all CRUD)
-│   ├── api/
-│   │   ├── auth/login/route.ts  ← POST /api/auth/login
-│   │   ├── auth/logout/route.ts ← POST /api/auth/logout
-│   │   ├── contact/route.ts     ← GET (admin) / POST (public)
-│   │   ├── contact/[id]/route.ts
-│   │   ├── reviews/route.ts
-│   │   ├── reviews/[id]/route.ts
-│   │   ├── team/route.ts
-│   │   ├── team/[id]/route.ts
-│   │   ├── banks/route.ts
-│   │   ├── banks/[id]/route.ts
-│   │   ├── slideshow/route.ts
-│   │   ├── slideshow/[id]/route.ts
-│   │   └── settings/route.ts
-│   ├── globals.css
-│   └── layout.tsx               ← Root layout + Toaster
-├── components/
-│   ├── sections/
-│   │   ├── Navbar.tsx
-│   │   ├── HeroSection.tsx      ← Slideshow + HR/Manager cards
-│   │   ├── AboutSection.tsx
-│   │   ├── BanksSection.tsx     ← Infinite marquee
-│   │   ├── ReviewsSection.tsx
-│   │   ├── TeamSection.tsx
-│   │   ├── ContactSection.tsx   ← Form + Social links
-│   │   └── Footer.tsx
-│   └── ui/
-│       └── ScrollReveal.tsx     ← Intersection Observer wrapper
-├── lib/
-│   ├── db.ts                    ← MongoDB connection (cached)
-│   ├── auth.ts                  ← JWT sign/verify helpers
-│   └── utils.ts                 ← Shared utilities
-├── middleware.ts                 ← Route protection for /admin
-├── models/
-│   ├── Admin.ts
-│   ├── Bank.ts
-│   ├── Contact.ts
-│   ├── Review.ts
-│   ├── Settings.ts
-│   ├── Slideshow.ts
-│   └── Staff.ts                 ← Covers HR, Manager, Team Leaders
-├── scripts/
-│   └── seed.js                  ← DB seeder with demo data
-├── public/
-│   ├── slides/                  ← Drop slideshow images here
-│   ├── avatars/                 ← Drop staff photos here
-│   └── logos/                   ← Drop bank logos here
-├── .env.example
-├── next.config.js
-├── tailwind.config.ts
-├── postcss.config.js
-├── tsconfig.json
-└── package.json
+├── public/                 # Static assets (logos, favicons)
+├── src/
+│   ├── components/         # Reusable UI components (Logo, Header, Footer)
+│   │   └── calculators/    # Financial calculator components
+│   ├── data/               # Static site data and configuration (site.ts, loans.ts)
+│   ├── lib/                # Library configurations (Supabase client)
+│   ├── pages/              # Route pages (Home, About, Contact, etc.)
+│   ├── App.tsx             # Main routing component
+│   ├── index.css           # Global CSS variables and Tailwind imports
+│   └── main.tsx            # React application entry point
+├── tailwind.config.js      # Tailwind configuration and theme extension
+└── package.json            # Project dependencies and scripts
 ```
 
----
+## 📄 License
 
-## ⚡ Quick Start
-
-### 1. Install dependencies
-
-```bash
-npm install
-```
-
-### 2. Set up environment variables
-
-```bash
-cp .env.example .env
-```
-
-Edit `.env` and fill in:
-```env
-MONGODB_URI=mongodb://localhost:27017/finbud
-JWT_SECRET=your_super_long_random_secret_here
-ADMIN_EMAIL=admin@finbudfinancial.com
-ADMIN_PASSWORD=FinBud@Admin2025
-NEXT_PUBLIC_SITE_URL=http://localhost:3000
-```
-
-> **MongoDB Atlas?** Use your Atlas connection string:
-> `mongodb+srv://<user>:<password>@cluster.mongodb.net/finbud`
-
-### 3. Seed the database
-
-```bash
-node scripts/seed.js
-```
-
-This creates:
-- 1 admin account
-- 5 slideshow slides
-- HR, Manager, and 6 Team Leader profiles
-- 12 bank partners
-- 6 client reviews
-- Default site settings
-
-### 4. Run development server
-
-```bash
-npm run dev
-```
-
-Open: http://localhost:3000
-
-Admin panel: http://localhost:3000/admin/login
-
----
-
-## 🔑 Admin Credentials (after seeding)
-
-| Field    | Value                          |
-|----------|-------------------------------|
-| Email    | `admin@finbudfinancial.com`    |
-| Password | `FinBud@Admin2025`             |
-
-**Change these in `.env` before deploying!**
-
----
-
-## 📸 Adding Real Photos
-
-Place your photos in the `public/` folder, then update via the Admin panel:
-
-| Photo Type        | Folder            | Example URL          |
-|-------------------|-------------------|----------------------|
-| Staff/HR/Manager  | `public/avatars/` | `/avatars/priya.jpg` |
-| Slideshow images  | `public/slides/`  | `/slides/slide1.jpg` |
-| Bank logos        | `public/logos/`   | `/logos/sbi.png`     |
-
-In the Admin Dashboard → HR & Team → Edit member → paste the Photo URL.
-
----
-
-## 🚀 Production Deployment
-
-### Build
-
-```bash
-npm run build
-npm start
-```
-
-### Deploy to Vercel (Recommended)
-
-```bash
-npm i -g vercel
-vercel
-```
-
-Set environment variables in the Vercel dashboard under **Settings → Environment Variables**.
-
-### Deploy to any VPS (PM2)
-
-```bash
-npm run build
-npm install -g pm2
-pm2 start npm --name "finbud" -- start
-pm2 save
-pm2 startup
-```
-
----
-
-## 🛠 Admin Dashboard Features
-
-| Section       | What you can do                                        |
-|---------------|--------------------------------------------------------|
-| Overview      | See counts of all content at a glance                  |
-| Slideshow     | Add / edit / delete hero carousel slides               |
-| HR & Team     | Manage HR, Manager, and Team Leader cards              |
-| Banks         | Add / edit / delete bank partner logos                 |
-| Reviews       | Full CRUD for client testimonials                      |
-| Submissions   | View, mark read, delete contact form entries           |
-| Settings      | Edit address, phone, email, social links, About text   |
-
----
-
-## 🎨 Customization
-
-- **Colors**: Edit CSS variables in `app/globals.css`
-- **Fonts**: Already using Playfair Display + DM Sans via Google Fonts
-- **Brand name**: Search & replace `FinBud Financial` across files
-- **Finance Buddha link**: Update `https://www.financebuddha.com/` in Navbar and Footer
-
----
-
-## 📦 Tech Stack
-
-| Layer      | Technology                    |
-|------------|-------------------------------|
-| Frontend   | Next.js 14 (App Router) + React 18 |
-| Styling    | Tailwind CSS + CSS variables  |
-| Backend    | Next.js API Routes            |
-| Database   | MongoDB + Mongoose            |
-| Auth       | JWT (HTTP-only cookies)       |
-| Animations | CSS + IntersectionObserver    |
-| Icons      | Lucide React                  |
-| Toasts     | react-hot-toast               |
+This project is proprietary and confidential. All rights reserved by FinBud Financial.
