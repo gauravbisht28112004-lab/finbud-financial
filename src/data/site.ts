@@ -4,9 +4,9 @@ export const siteData = {
   description:
     'FinBud Financial is a financial services platform helping individuals and businesses access the right loans and credit facilities. We guide you through personal loans, home loans, business loans, and overdraft facilities with transparency and expertise.',
   phone: '+91 95403 03660',
-  email: 'hello@finbudfinancial.com',
+  email: 'Akash@finbudfinancial.com',
   whatsapp: 'https://api.whatsapp.com/send/?phone=919540303660&text&type=phone_number&app_absent=0',
-  address: 'C-75, Sector 7, Noida, Uttar Pradesh 201301',
+  address: 'D-47, Sector 7, Noida, Uttar Pradesh 201301',
   hours: 'Monday to Saturday, 10:00 AM to 7:00 PM',
   social: {
     facebook: 'https://www.facebook.com/people/Akash-Vibes/pfbid0H3S3w2nqaAyzKmB4pT9MejgJW1A6AtGkUeUCKTDjBoEtkr7gpJ3TJLQtKcEXSFDSl/?mibextid=wwXIfr&rdid=l5pSxZxpcBYezV7i&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1boLYSEp6U%2F%3Fmibextid%3DwwXIfr%26ref%3D1',
@@ -89,29 +89,18 @@ export const siteData = {
   ],
   team: [
     {
-      name: 'Rajesh Sharma',
-      designation: 'Founder & CEO',
-      bio: 'With over 15 years in banking and financial services, Rajesh founded FinBud Financial to make loan access simpler and more transparent for every Indian.',
-      initials: 'RS',
+      name: 'Nilamber Dutta',
+      designation: 'Business head',
+      bio: 'With over 15 years in banking and financial services, Nilamber founded FinBud Financial to make loan access simpler and more transparent for every Indian.',
+      initials: 'ND',
     },
     {
-      name: 'Priya Nair',
+      name: 'Akashdeep Kohli',
       designation: 'Head of Operations',
-      bio: 'Priya oversees day-to-day operations and ensures every client application moves smoothly from submission to disbursal.',
-      initials: 'PN',
-    },
-    {
-      name: 'Amit Kumar',
-      designation: 'Senior Loan Advisor',
-      bio: 'Amit specialises in home and business loans, helping clients navigate complex requirements and documentation.',
+      bio: 'Akashdeep oversees day-to-day operations and ensures every client application moves smoothly from submission to disbursal.',
       initials: 'AK',
     },
-    {
-      name: 'Sneha Reddy',
-      designation: 'Client Relations Manager',
-      bio: 'Sneha leads client communications, ensuring every borrower feels supported throughout their loan journey.',
-      initials: 'SR',
-    },
+  
   ],
   testimonials: [
     {
